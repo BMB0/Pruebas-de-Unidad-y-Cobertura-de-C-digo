@@ -1,0 +1,84 @@
+B. VER PANTALLA PRINCIPAL (JUGADOR)
+
+    HDU 1: Presionar el botón de “Juego Rápido” y enviar a la vista “Campo de Juego”
+        TESTS:
+        (UI)1.1. Si presiono el botón “Juego Rápido” se debería borrar la vista “Página Principal” y mostrar la vista “Campo de Juego”.
+
+    HDU 2: Presionar el botón de “Tutorial” y enviar a la vista “Tutorial”
+        TESTS:
+        (UI)2.1. Si presiono el botón “Tutorial” se debería borrar la vista “Página Principal” y mostrar la vista “Tutorial”.
+
+D. VER TUTORIAL
+
+    HDU 1: Presionar el botón de “Tutorial” y enviar a la vista “Tutorial”
+        TESTS:
+        (UI)1.1. En la vista “Tutorial” debería visualizarse la descripción del juego: “El juego consiste en adivinar una palabra que el juego elige al azar…..”
+
+    HDU 2: Mostrar los pasos del juego.
+        TESTS:
+        (UI)2.1. En la vista “Tutorial” debería visualizarse los pasos del juego: Paso 1: Elegir una modalidad de juego, Paso 2: Ingresar una palabra real como intento, Paso 3: Ver las pistas del intento anterior…………
+
+F. DEFINIR MODALIDADES DE JUEGO
+
+    HDU 1: Mostrar descripción de la modalidad de “Juego Rápido” 
+        TESTS:
+        (UI)1.1. En la vista “Modalidades de Juego” debería mostrar la descripción de la modalidad “Juego Rápido”: “Adivinar una palabra cualquiera elegida al azar.”
+
+    HDU 2: Presionar botón de “Juego Rápido” y enviar a la vista “Campo de Juego” 
+        TESTS:
+        (UI)2.1. Si se presiona el botón “Juego Rápido” se debería borrar la vista “Modalidades” y mostrar la vista “Campo de Juego”.
+
+    HDU 3: Crear y mostrar una palabra seleccionable para jugar
+        TESTS:
+        (UI)3.1. Si se presiona el botón “Juego Rápido” y la palabra creada por el juego fue <HOLA>, debería mostrar un mensaje de texto con la palabra <HOLA>.
+
+    HDU 4: Crear y mostrar una lista de palabras seleccionables para jugar
+        TESTS:
+        (UI)4.1. Si se presiona el botón “Juego Rápido” y la lista de palabras creadas por el juego fue <HOLA, HIJA, DUKE>, debería mostrar un mensaje de texto con las palabras <HOLA, HIJA, DUKE>.
+
+    HDU 5: Seleccionar y mostrar la primera palabra de la lista que será la “Palabra Secreta” a adivinar
+        TESTS:
+        (UI)5.1. Si se presiona el botón “Juego Rápido” y la lista de palabras creada por el juego fue <HOLA, HIJA, DUKE>, debería definirse como “Palabra Secreta” a <HOLA> y mostrarla en pantalla.
+
+    HDU 6: Seleccionar al azar y mostrar una palabra de la lista que será la “Palabra Secreta” a adivinar
+        TESTS:
+        (UI)6.1. Si se presiona el botón “Juego Rápido” y la lista de palabras creada por el juego fue <HOLA, HIJA, DUKE>, debería definirse al azar la “Palabra Secreta” y mostrarla. Ejm: Si se elige al azar la palabra <DUKE>, se debería establecer como la “Palabra Secreta” la palabra <DUKE> y mostrarse en pantalla.
+
+
+
+G. INGRESAR INTENTOS
+
+    HDU 1: Ingresar una palabra como intento y que se visualice en mayúsculas 
+        TESTS:
+        1.1. Si la palabra secreta es <HOLA> y se ingresa como intento la palabra <>, debería mostrar el mensaje “Palabra incompleta”.
+        1.2. Si la palabra secreta es <HOLA> y se ingresa como intento la palabra <ho>, debería mostrar el mensaje “Palabra incompleta”.
+        1.3. Si la palabra secreta es <HOLA> y se ingresa como intento la palabra <bola>, se debería mostrar el intento <BOLA>.
+
+    HDU 2: Determinar si la palabra que ingresa existe en la lista de palabras seleccionables
+        TESTS:
+        2.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, debería mostrarse la palabra <BOLA> como un intento válido.
+        2.2. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra”.
+
+    HDU 3: Ingresar varias palabras como intentos, una después de otra y que se visualicen
+        TESTS:
+        3.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, después la palabra <HOLA>, debería mostrarse los intentos <BOLA, HOLA>
+        3.2. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra” y volver a intentar ingresar otra palabra.
+
+    HDU 4: Ingresar 6 palabras como intentos, una después de otra y que se visualicen de manera apilada en orden de ingreso.
+        TESTS:
+        4.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra”, el contador de intentos igual a 0 y la lista de intentos como <””, “”, “”, “”, “”, “”>.
+        4.2. La lista de palabras seleccionables es <BOLA, HOLA, DUKE>, se ingresó el intento <COLA>, el contador de intentos es igual a 0 y la lista de intentos es <””, “”, “”, “”, “”, “”>. Posteriormente se ingresó otro intento <HOLA>, debería mostrarse la lista de intentos como <HOLA, “”, “”, “”, “”, “”> y el contador de intentos igual a 1.
+        4.3. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, <COLA>, <HOLA>, debería devolver el contador de intentos en 2 y la lista de intentos como <BOLA, HOLA, “”, “”, “”, “”>
+        4.4. Si el contador de intentos es igual a 6, debería bloquearse la opción de ingresar más intentos
+
+
+H. MOSTRAR PISTAS
+
+    HDU 1: Ingresar un intento y que muestre una “Cadena Resultado” de caracteres del tamaño del intento con el símbolo <o>.
+        TESTS:
+        (UI)1.1. En la vista “Tutorial” debería visualizarse la descripción del juego: “El juego consiste en adivinar una palabra que el juego elige al azar…..”
+
+    HDU 2: Mostrar los pasos del juego.
+        TESTS:
+        (UI)2.1. En la vista “Tutorial” debería visualizarse los pasos del juego: Paso 1: Elegir una modalidad de juego, Paso 2: Ingresar una palabra real como intento, Paso 3: Ver las pistas del intento anterior…………
+    

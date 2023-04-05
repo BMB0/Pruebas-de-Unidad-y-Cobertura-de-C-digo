@@ -1,0 +1,224 @@
+<html>
+  <head>
+      <script type="module" src="./src/presenter.js"></script>
+      <script type="text/javascript">  
+          function movetoNext(current, nextFieldID) {  
+              if (current.value.length >= current.maxLength) {  
+                document.getElementById(nextFieldID).focus();  
+              }  
+          }  
+      </script>
+      
+      <link rel="stylesheet" href="./style/styleUordel.css">
+  </head>
+
+  <body>
+
+  <!-------------------------------------------NAVIGATOR-------------------------------------------------->
+  <div id="navigator" style = "display:none;">
+    <div id="contenedor-navigator">
+      <form id="boton-volver-form">
+        <input type="submit" value="VOLVER" id="boton-volver-vista-principal"  class="submit"/>
+      </form>
+      <img id="logo-vista-principal" src="./imagenes/UORDEL Logo Navigator.png" alt="Logo_UORDEL" height="100px">
+    </div>
+  </div>
+
+  <!-------------------------------------------VISTA PRINCIPAL-------------------------------------------------->
+
+  <div id="vista-Principal">
+
+    <div id="contenedor-vista-principal">
+        <img id="logo-vista-principal" src="./imagenes/UORDEL Logo.png" alt="Logo_UORDEL" width="600 px" height="600px">
+
+        <div id="contenedor-opciones-vista-principal">
+            <form id="juego-rapido-form-principal" class="opciones-vista-principal">
+              <div id="descripcion-juego-rapido-principal" class="divdatos-botones">
+                <h2 class="titulo-opciones"> Juego Rápido </h2>
+                <h5 class="descripcion-opciones"> Adivinar una palabra cualquiera elegida al azar </h5>
+              </div>
+                <input type="submit" value="JUGAR" id="boton-juego-rapido"  class="submit"/>
+            </form>
+    
+            <form id="modalidades-form" class="opciones-vista-principal">
+              <div id="descripcion-modalidades" class="divdatos-botones">
+                <h2 class="titulo-opciones"> Modalidades </h2>
+                <h5 class="descripcion-opciones"> Explora las diferentes modalidades de juego </h5>
+              </div>
+                <input type="submit" value="IR" id="boton-modalidades" class="submit"/>
+            </form>
+    
+            <form id="tutorial-form" class="opciones-vista-principal">
+              <div id="descripcion-tutorial" class="divdatos-botones">
+                <h2 class="titulo-opciones"> Tutorial </h2>
+                <h5 class="descripcion-opciones"> Aprende a jugar </h5>
+              </div>
+                <input type="submit" value="VER" id="boton-tutorial" class="submit"/>
+            </form>
+
+            <form id="administrador-form" class="opciones-vista-principal">
+              <div id="descripcion-administrador" class="divdatos-botones">
+                <h2 class="titulo-opciones">Modo Administrador</h2>
+                <h5 class="descripcion-opciones"> Registrarse en modo administrador </h5>
+              </div>
+                <input type="submit" value="REGISTRARSE" id="boton-registrarse-admin" class="submit"/>
+            </form>
+        </div>
+    </div>
+
+  </div>
+ 
+  <!-------------------------------------------VISTA REGISTRARSE COMO ADMIN-------------------------------------------------->
+
+
+  <div id="vista-registro-admistrador" style = "display:none;"> 
+      <h2 class="titulo-vista">REGISTRARSE EN MODO ADMINISTRADOR</h2>
+      <form id="registro-admin-form">
+          <label for="password-admin" class="label-input">Ingrese Contraseña: </label>
+          <input type="password" id="password-admin" name="password-admin" class="contrasenia"/>
+          <input type="submit" value="ACEPTAR" id="boton-aceptar-password" class="submit"/>
+      </form>
+  </div>
+
+  <!-------------------------------------------VISTA BANCO DE PALABRAS-------------------------------------------------->
+
+  <div id="vista-banco-palabras" style = "display:none;"> 
+      <h2 class="titulo-vista"> BANCO DE PALABRAS</h2>
+      <form id="nueva-palabra-form">
+        <label for="nueva-palabra" class="label-input">Ingrese Nueva Palabra: </label>
+        <input type="text" id="nueva-palabra" name="nueva-palabra" onkeyup="this.value = this.value.toUpperCase();"/><br>
+        <div>
+
+            <input type="checkbox" name="categoria1" value="Deporte" id="categoria-deporte">
+            <label for="categoria1" class="categorias-nueva-palabra">Deporte</label><br>
+    
+            <input type="checkbox" name="categoria2" value="UCB" id="categoria-ucb">
+            <label for="categoria2" class="categorias-nueva-palabra">UCB</label><br>
+    
+            <input type="checkbox" name="categoria3" value="Sistemas" id="categoria-sistemas">
+            <label for="categoria3" class="categorias-nueva-palabra">Sistemas</label><br>
+        </div>
+
+        <input type="submit" value="ACEPTAR" class="submit"/>
+      </form>
+  </div>
+
+  <!-------------------------------------------VISTA CAMPO DE JUEGO-------------------------------------------------->
+
+  <div id="vista-campo-juego" style="display: none;">
+    <div id="contenedor-campo-juego">
+      <form id="historial-intentos-form"></form>
+      <form id="ingresar-intento-form"></form>
+      <form id="boton-pista">
+        <input id="boton-mostrar-pista" type="submit" value="PISTA" class="submit"/>
+      </form>
+    </div>
+  </div>
+
+  <!-------------------------------------------VISTA TUTORIAL-------------------------------------------------->
+
+  <div id="vista-tutorial" style="display: none;">
+    <h2 class="titulo-vista">TUTORIAL</h2>
+    <div class="contenedor-tutorial">
+        <li> Adivina la palabra oculta en seis intentos</li><br>
+        <img id="logo-vista-principal" src="./imagenes/Campo de juego.jpg" alt="Logo_UORDEL" height="500px"><br>
+
+        <li> Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra. </li><br>
+        <li>
+          <span style="color: rgb(0, 74, 173)"> Azul</span>
+          <span>indica que la letra esta en la posicion corecta.</span>
+        </li><br>
+        <img id="logo-vista-principal" src="./imagenes/toros.jpg" alt="Logo_UORDEL" height="60px"><br>
+
+        <li>
+          <span style="color: rgb(247, 147, 30)">Amarillo </span>
+          <span>indica que la letra esta en la posicion corecta. </span>
+        </li><br>
+        <img id="logo-vista-principal" src="./imagenes/vacas.jpg" alt="Logo_UORDEL" height="60px"><br>
+
+        <li> En caso de no tener color la letra no se encuentra en la palabra.</li><br>
+        <img id="logo-vista-principal" src="./imagenes/sin vacas y toros.jpg" alt="Logo_UORDEL" height="60px"><br>
+
+    </div>
+    <h4 class="titulo-pasos">Pasos del Juego</h4>
+    <div class="contenedor-tutorial">
+        <li> Elegir una modalidad de juego.</li><br>
+        <img id="logo-vista-principal" src="./imagenes/modalidades.jpg" alt="Logo_UORDEL" height="500px"><br>
+
+        <li> Ingresar una palabra real como intento.</li><br>
+        <img id="logo-vista-principal" src="./imagenes/Intento.jpg" alt="Logo_UORDEL" height="500px"><br>
+
+        <li> Ver las pistas del intento anterior.</li><br>
+        <img id="logo-vista-principal" src="./imagenes/historial intentos.jpg" alt="Logo_UORDEL" height="500px"><br>
+
+        <li> Ver una pista en caso de estar estancado</li><br>
+        <img id="logo-vista-principal" src="./imagenes/pista letra.jpg" alt="Logo_UORDEL" height="500px"><br>
+
+    </div>
+  </div>
+   
+  <!-------------------------------------------VISTA MODALIDADES-------------------------------------------------->
+
+  <div id="vista-modalidades" style = "display: none;">
+    <h2 class="titulo-vista">MODALIDADES DE JUEGO</h2><br>
+    <div id="contenedor-modalidades">
+        <form id="juego-rapido-form">
+            <h2 class="titulo-modalidad"> Juego Rápido </h2>
+            <h5 class="descripcion-opciones"> Adivinar una palabra cualquiera elegida al azar </h5>
+            <input type="submit" class="submit" value="JUEGO RÁPIDO" />
+        </form>
+
+        <h2 class="titulo-modalidad"> CATEGORÍAS DE JUEGO</h2>
+        <h5 class="descripcion-opciones"> Adivinar una palabra al azar de la temática derminada.</h5>
+
+        <form id="juego-categoria-deporte">
+            <h2 class="titulo-modalidad"> Deportes </h2>
+            <input type="submit" class="submit" value="JUGAR" />
+        </form>
+        <form id="juego-categoria-ucb">
+            <h2 class="titulo-modalidad"> La Cato </h2>
+            <input type="submit" class="submit" value="JUGAR" />
+        </form>
+        <form id="juego-categoria-sistemas">
+            <h2 class="titulo-modalidad"> Sistemas </h2>
+            <input type="submit" class="submit" value="JUGAR" />
+        </form>
+    </div>
+  </div>
+
+  <!-------------------------------------------VISTA PERDEDOR-------------------------------------------------->
+
+  <div id="vista-perdedor" style = "display:none;">
+      <h2 class="titulo-vista"> PERDISTE JAJAJAJAJ </h2>
+      <div id="contenedor-campo-juego">
+          <form id="perdedor-form"></form>
+          
+          <form id="perdedor-form-volver-jugar-rand">
+            <input type="submit" class="submit" value="CAMBIAR PALABRA">
+          </form>
+
+          <form id="perdedor-form-volver-jugar-same">
+            <input type="submit" class="submit" value="SEGUIR INTENTANDO">
+          </form>
+      </div>
+  </div>
+
+  <!-------------------------------------------VISTA GANADOR-------------------------------------------------->
+
+  <div id="vista-ganador" style = "display: none;">
+      <h2 class="titulo-vista"> BUENA, GANASTE :D</h2>
+      <div id="contenedor-campo-juego">
+          <form id="palabra-secreta-form"></form>
+
+          <form id="ganador-form"></form>
+      
+          <form id="ganador-form-volver-jugar">
+            <input type="submit" class="submit" value="VOLVER A JUGAR">
+          </form>
+      </div>
+  </div>
+
+  </body>
+</html> 
+
+<!--IT 2 <E><HDU 1><TEST PASSED> <MOSTRAR SI PALABRA YA EXISTE EN EL BANCO DE PALABRAS>-->
