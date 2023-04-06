@@ -1,1 +1,5 @@
-import FuncionesWordle from "./funcionesWordle.js"
+import wordle from "./wordle.js"
+
+describe("funcionesWordleTest", () => {
+        funWrodle = new wordle()
+})
