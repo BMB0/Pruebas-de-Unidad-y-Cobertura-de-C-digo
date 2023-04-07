@@ -43,3 +43,19 @@ describe("generarResultadoVacio(tamPalabraSecreta)", () => {
     //expect(0).toBe(0);
   });
 })
+
+describe("definirNuevaPalabra(nuevaPalabra)", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TCU 1. Tiene que aniadir la palabra a la lista y subir el tamanio de la lista de palabras', () => {
+    funcionesWordle.definirNuevaPalabra('PELO');
+    expect(funcionesWordle.palabrasSeleccionables[funcionesWordle.palabrasSeleccionables.length - 1]).toBe("PELO");
+  });
+
+  it('TCU 2. Debería lanzar un error si se ingresa una cadena vacía', () => {
+    expect(() => funcionesWordle.definirNuevaPalabra('')).toThrow('Ya existe esa palabra.');
+  });
+  
+  it('TCU 3. No debe lanzar un error si el intento es completo', () => {
+    expect(() => funcionesWordle.definirNuevaPalabra('HOLA')).toThrow('Ya existe esa palabra.');
+  });
+})
