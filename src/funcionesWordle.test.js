@@ -16,3 +16,10 @@ describe("Funcion esIntentoIncompleto(intento, tamPalabraSecreta)", () => {
     }).not.toThrowError();
   });
 })
+
+describe("esIntentoPermitido(intento)", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TCU 1. Debería lanzar un error si el intento no es una palabra seleccionable', () => {
+    expect(() => funcionesWordle.esIntentoPermitido('XYZ')).toThrow('No existe esa palabra.');
+  });
+})
