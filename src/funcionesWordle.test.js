@@ -1,5 +1,6 @@
 import FuncionesWordle from "./funcionesWordle"
 import WordleError from "./ExcepcionesWordle";
+import Wordle from "./wordle";
 
 describe("Funcion esIntentoIncompleto(intento, tamPalabraSecreta)", () => {
   let funcionesWordle = new FuncionesWordle();
@@ -25,5 +26,20 @@ describe("Funcion esIntentoPermitido(intento)", () => {
   
   it('TCU 2. No debe lanzar un error si el intento es completo', () => {
     expect(() => funcionesWordle.esIntentoPermitido('HOLA')).not.toThrow('No existe esa palabra.');
+  });
+})
+
+describe("generarResultadoVacio(tamPalabraSecreta)", () => {
+  let funcionesWordle = new FuncionesWordle();
+  //console.log(funcionesWordle);
+  it('TCU 1. Tiene que generar un array del mismo tamanio que el de la variable tamPalabraSecreta', () => {
+    funcionesWordle.generarResultadoVacio(5);
+    console.log(typeof(funcionesWordle.obtenerCadenaResultado()))
+    expect(funcionesWordle.obtenerCadenaResultado()).toEqual(['o','o','o','o','o']);
+  });
+  it('TCU 2. Tiene que generar un array de tamanio 0 ', () => {
+    funcionesWordle.generarResultadoVacio(0);
+    expect(funcionesWordle.cadenaResultado).toEqual([]);
+    //expect(0).toBe(0);
   });
 })
