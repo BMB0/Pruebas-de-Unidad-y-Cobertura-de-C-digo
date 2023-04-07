@@ -62,11 +62,17 @@ describe('definirResultadoJuego(intento, palabraSecreta)', () => {
   const palabraSecreta = 'HOLA';
 
   it('TCU 1. debería devolver "Ganador" si el intento es igual a la palabra secreta', () => {
+    funcionesWordle.nroIntentos = 0;
     expect(funcionesWordle.definirResultadoJuego('HOLA', palabraSecreta)).toBe('Ganador');
   });
   
   it('debería devolver "Perdedor" si se han hecho 6 intentos sin acertar la palabra secreta', () => {
     funcionesWordle.nroIntentos = 6;
     expect(funcionesWordle.definirResultadoJuego('XYZ', palabraSecreta)).toBe('Perdedor');
+  });
+  
+  it('debería devolver "Activo" si el intento es diferente a la palabra secreta y no se han hecho 6 intentos', () => {
+    funcionesWordle.nroIntentos = 0;
+    expect(funcionesWordle.definirResultadoJuego('MUNDO', palabraSecreta)).toBe('Activo');
   });
 });
