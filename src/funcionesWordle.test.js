@@ -9,4 +9,10 @@ describe("Funcion esIntentoIncompleto(intento, tamPalabraSecreta)", () => {
       funcionesWordle.esIntentoIncompleto('hola', 6);
     }).toThrowError(Error);
   });
+
+  it('TCU 2. No debe lanzar un error si el intento es completo', () => {
+    expect(() => {
+      funcionesWordle.esIntentoIncompleto('hola', 4);
+    }).not.toThrowError();
+  });
 })
