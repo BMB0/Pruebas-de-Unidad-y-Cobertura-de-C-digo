@@ -56,3 +56,12 @@ describe("definirNuevaPalabra(nuevaPalabra)", () => {
     expect(() => funcionesWordle.definirNuevaPalabra('HOLA')).toThrow('Ya existe esa palabra.');
   });
 })
+
+describe('definirResultadoJuego(intento, palabraSecreta)', () => {
+  let funcionesWordle = new FuncionesWordle();
+  const palabraSecreta = 'HOLA';
+
+  it('TCU 1. debería devolver "Ganador" si el intento es igual a la palabra secreta', () => {
+    expect(funcionesWordle.definirResultadoJuego('HOLA', palabraSecreta)).toBe('Ganador');
+  });
+});
