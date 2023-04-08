@@ -111,3 +111,11 @@ describe("limpiarListaIntentos()", () => {
     expect(funcionesWordle.nroIntentos).toEqual(0);
   });
 })
+
+describe("obtenerListaPalabras()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  //console.log(funcionesWordle);
+  it('TC1. Tiene que retornar la Lista de Palabras', () => {
+    expect(funcionesWordle.obtenerListaPalabras()).toEqual(["HOJA","HOLA","LOBO","COLA","PALO","PICO","COCA","PERO","DUKE","RAYOS","MESSI","PALOS","LIBRO","LLAVE","BALON","CINCO",]);
+  });
+})
