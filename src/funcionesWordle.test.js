@@ -100,3 +100,14 @@ describe('definirPalabraSecreta(palabra)', () => {
     expect(funcionesWordle.definirPalabraSecreta('RAYOS')).toBe('RAYOS');
   });
 });
+
+describe("limpiarListaIntentos()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  //console.log(funcionesWordle);
+  it('TC1. Tiene que generar un array del mismo tamanio que el de la variable tamPalabraSecreta', () => {
+    funcionesWordle.limpiarListaIntentos();
+    expect(funcionesWordle.listaIntentos).toEqual(['X','X','X','X','X','X',]);
+    expect(funcionesWordle.listaPistas).toEqual(['X','X','X','X','X','X',]);
+    expect(funcionesWordle.nroIntentos).toEqual(0);
+  });
+})
