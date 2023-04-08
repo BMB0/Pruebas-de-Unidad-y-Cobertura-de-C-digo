@@ -89,3 +89,14 @@ describe('definirResultadoJuego(intento, palabraSecreta)', () => {
   });
 });
 
+describe('definirPalabraSecreta(palabra)', () => {
+  let funcionesWordle = new FuncionesWordle();
+  
+  it('TC1. Devuelve la palabra y la guarda ', () => {
+    expect(funcionesWordle.definirPalabraSecreta('MUNDO')).toBe('MUNDO');
+  });
+  
+  it('TC2. Devuelve la palabra y no la guarda ', () => {
+    expect(funcionesWordle.definirPalabraSecreta('RAYOS')).toBe('RAYOS');
+  });
+});
