@@ -69,6 +69,25 @@ describe('agregarNuevaPalabra(nuevaPalabra)', () => {
   });
 });
 
+describe('definirPalabraSecretaAlAzar(categoria)', () => {
+  const randomNumberExpected = 0
+  let funcionesWordle;
+
+  beforeEach(() => {
+    funcionesWordle = new FuncionesWordle();
+    jest.spyOn(global.Math, 'random').mockReturnValue(randomNumberExpected)
+  })
+
+  afterEach(() => {
+    jest.spyOn(global.Math, 'random').mockRestore()
+  })
+
+  it('TC1. debería retornar una palabra aleatoria de la categoría Deporte', () => {
+    expect(funcionesWordle.definirPalabraSecretaAlAzar('Deporte')).toBe('MESSI')
+    expect(Math.random).toHaveBeenCalledTimes(1)
+  });
+});
+
 describe('definirResultadoJuego(intento, palabraSecreta)', () => {
   let funcionesWordle = new FuncionesWordle();
   const palabraSecreta = 'HOLA';
