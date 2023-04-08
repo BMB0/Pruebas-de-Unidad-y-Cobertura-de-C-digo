@@ -58,10 +58,14 @@ describe("definirNuevaPalabra(nuevaPalabra)", () => {
 })
 
 describe('agregarNuevaPalabra(nuevaPalabra)', () => {
-  let funcionesWordle = new FuncionesWordle(); // Se asume que se ha creado una instancia de la clase Juego previamente
+  let funcionesWordle = new FuncionesWordle();
   
   it('TC1. debería devolver la nueva palabra si se puede agregar exitosamente', () => {
     expect(funcionesWordle.agregarNuevaPalabra('RARO')).toBe('RARO');
+  });
+  
+  it('TC2. debería devolver el mensaje de error si la nueva palabra no es válida', () => {
+    expect(funcionesWordle.agregarNuevaPalabra('HOLA')).toBe('Ya existe esa palabra.');
   });
 });
 
