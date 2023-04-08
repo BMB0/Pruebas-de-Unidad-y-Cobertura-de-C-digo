@@ -91,6 +91,11 @@ describe('definirPalabraSecretaAlAzar(categoria)', () => {
     expect(funcionesWordle.definirPalabraSecretaAlAzar('UCB')).toBe('LOBO')
     expect(Math.random).toHaveBeenCalledTimes(1)
   });
+
+  it('TC3. debería retornar una palabra aleatoria de la categoría UCB', () => {
+    expect(funcionesWordle.definirPalabraSecretaAlAzar('Sistemas')).toBe('HOLA')
+    expect(Math.random).toHaveBeenCalledTimes(1)
+  });
 });
 
 describe('definirResultadoJuego(intento, palabraSecreta)', () => {
