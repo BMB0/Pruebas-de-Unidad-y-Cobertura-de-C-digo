@@ -211,3 +211,10 @@ describe("obtenerCategoriaUCB()", () => {
     expect(funcionesWordle.obtenerCategoriaUCB()).toEqual(["LOBO", "LIBRO", "LLAVE"]);
   });
 }) 
+
+describe("obtenerCategoriaSistemas()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. Tiene que retornar la Lista de Palabras de la categoria Sistemas', () => {
+    expect(funcionesWordle.obtenerCategoriaSistemas()).toEqual(["HOLA", "PERO"]);
+  });
+}) 
