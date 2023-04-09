@@ -26,7 +26,7 @@ describe("Funcion esIntentoPermitido(intento)", () => {
   });
 })
 
-describe('WordleGame - agregarIntentoHistorial', () => {
+describe('agregarIntentoHistorial(intento)', () => {
   let funcionesWordle;
 
   beforeEach(() => {
@@ -45,9 +45,37 @@ describe('WordleGame - agregarIntentoHistorial', () => {
   });
 });
 
+describe('definirIntento(intento, tamPalabraSecreta)', () => {
+  let funcionesWordle;
+
+  beforeEach(() => {
+    funcionesWordle = new FuncionesWordle();
+  });
+
+  it('TC1. Debe agregar el intento al historial si nroIntentos es menor a 6', () => {
+    funcionesWordle.nroIntentos = 0;
+    expect(funcionesWordle.definirIntento('HOLA', 4)).toBe('HOLA');
+    expect(funcionesWordle.listaIntentos).toContain('HOLA');
+  });
+  it('TC2. Debe devolver el intento si nroIntentos es igual a 6', () => {
+    funcionesWordle.nroIntentos = 6;
+    expect(funcionesWordle.definirIntento('COLA', 4)).toBe('COLA');
+    expect(funcionesWordle.listaIntentos).not.toContain('COLA');
+  });
+  it('TC3. Debe lanzar una excepción si el intento es incompleto', () => {
+    funcionesWordle.nroIntentos = 0;
+    expect(funcionesWordle.definirIntento('HO', 4)).toEqual('Palabra Incompleta.');
+    expect(funcionesWordle.listaIntentos).not.toContain('HO');
+  });
+  it('TC4. Debe lanzar una excepción si el intento no está permitido', () => {
+    funcionesWordle.nroIntentos = 0;
+    expect(funcionesWordle.definirIntento('1234', 4)).toEqual('No existe esa palabra.');
+    expect(funcionesWordle.listaIntentos).not.toContain('1234');
+  });
+});
+
 describe("generarResultadoVacio(tamPalabraSecreta)", () => {
   let funcionesWordle = new FuncionesWordle();
-  //console.log(funcionesWordle);
   it('TC1. Tiene que generar un array del mismo tamanio que el de la variable tamPalabraSecreta', () => {
     funcionesWordle.generarResultadoVacio(5);
     console.log(typeof(funcionesWordle.obtenerCadenaResultado()))
@@ -56,7 +84,6 @@ describe("generarResultadoVacio(tamPalabraSecreta)", () => {
   it('TC2. Tiene que generar un array de tamanio 0 ', () => {
     funcionesWordle.generarResultadoVacio(0);
     expect(funcionesWordle.cadenaResultado).toEqual([]);
-    //expect(0).toBe(0);
   });
 })
 
