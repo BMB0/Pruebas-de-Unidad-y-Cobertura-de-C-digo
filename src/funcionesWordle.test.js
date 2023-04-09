@@ -26,7 +26,7 @@ describe("Funcion esIntentoPermitido(intento)", () => {
   });
 })
 
-describe('WordleGame - agregarIntentoHistorial', () => {
+describe('agregarIntentoHistorial(intento)', () => {
   let funcionesWordle;
 
   beforeEach(() => {
@@ -45,9 +45,22 @@ describe('WordleGame - agregarIntentoHistorial', () => {
   });
 });
 
+describe('definirIntento(intento, tamPalabraSecreta)', () => {
+  let funcionesWordle;
+
+  beforeEach(() => {
+    funcionesWordle = new FuncionesWordle();
+  });
+
+  it('TC1. Debe agregar el intento al historial si nroIntentos es menor a 6', () => {
+    funcionesWordle.nroIntentos = 0;
+    expect(funcionesWordle.definirIntento('HOLA', 4)).toBe('HOLA');
+    expect(funcionesWordle.listaIntentos).toContain('HOLA');
+  });
+});
+
 describe("generarResultadoVacio(tamPalabraSecreta)", () => {
   let funcionesWordle = new FuncionesWordle();
-  //console.log(funcionesWordle);
   it('TC1. Tiene que generar un array del mismo tamanio que el de la variable tamPalabraSecreta', () => {
     funcionesWordle.generarResultadoVacio(5);
     console.log(typeof(funcionesWordle.obtenerCadenaResultado()))
@@ -56,7 +69,6 @@ describe("generarResultadoVacio(tamPalabraSecreta)", () => {
   it('TC2. Tiene que generar un array de tamanio 0 ', () => {
     funcionesWordle.generarResultadoVacio(0);
     expect(funcionesWordle.cadenaResultado).toEqual([]);
-    //expect(0).toBe(0);
   });
 })
 
@@ -156,7 +168,6 @@ describe('definirPalabraSecreta(palabra)', () => {
 
 describe("limpiarListaIntentos()", () => {
   let funcionesWordle = new FuncionesWordle();
-  //console.log(funcionesWordle);
   it('TC1. Tiene que generar un array del mismo tamanio que el de la variable tamPalabraSecreta', () => {
     funcionesWordle.limpiarListaIntentos();
     expect(funcionesWordle.listaIntentos).toEqual(['X','X','X','X','X','X',]);
@@ -167,7 +178,6 @@ describe("limpiarListaIntentos()", () => {
 
 describe("obtenerListaPalabras()", () => {
   let funcionesWordle = new FuncionesWordle();
-  //console.log(funcionesWordle);
   it('TC1. Tiene que retornar la Lista de Palabras', () => {
     expect(funcionesWordle.obtenerListaPalabras()).toEqual(["HOJA","HOLA","LOBO","COLA","PALO","PICO","COCA","PERO","DUKE","RAYOS","MESSI","PALOS","LIBRO","LLAVE","BALON","CINCO",]);
   });
