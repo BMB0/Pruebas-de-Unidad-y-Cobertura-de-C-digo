@@ -26,6 +26,25 @@ describe("Funcion esIntentoPermitido(intento)", () => {
   });
 })
 
+describe('WordleGame - agregarIntentoHistorial', () => {
+  let funcionesWordle;
+
+  beforeEach(() => {
+    funcionesWordle = new FuncionesWordle();
+  });
+
+  it('TC1. debería agregar el intento al historial y aumentar el contador de intentos', () => {
+    funcionesWordle.nroIntentos = 0
+    funcionesWordle.agregarIntentoHistorial("PATO");
+    expect(funcionesWordle.listaIntentos).toEqual(['PATO', "X", "X", "X", "X", "X"]);
+    expect(funcionesWordle.nroIntentos).toBe(1);
+
+    funcionesWordle.agregarIntentoHistorial('PALO');
+    expect(funcionesWordle.listaIntentos).toEqual(['PATO', 'PALO', "X", "X", "X", "X"]);
+    expect(funcionesWordle.nroIntentos).toBe(2);
+  });
+});
+
 describe("generarResultadoVacio(tamPalabraSecreta)", () => {
   let funcionesWordle = new FuncionesWordle();
   //console.log(funcionesWordle);
