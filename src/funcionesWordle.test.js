@@ -176,4 +176,11 @@ describe("obtenerCategoriaDeporte()", () => {
   it('TC1. Tiene que retornar la Lista de Palabras de la categoria deporte', () => {
     expect(funcionesWordle.obtenerCategoriaDeporte()).toEqual(["MESSI", "BALON", "DUKE", "CINCO"]);
   });
-})
+}) 
+
+describe("obtenerCategoriaUCB()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. Tiene que retornar la Lista de Palabras de la categoria UCB', () => {
+    expect(funcionesWordle.obtenerCategoriaUCB()).toEqual(["LOBO", "LIBRO", "LLAVE"]);
+  });
+}) 
