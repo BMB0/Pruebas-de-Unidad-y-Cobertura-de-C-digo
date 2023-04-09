@@ -218,3 +218,10 @@ describe("obtenerCategoriaSistemas()", () => {
     expect(funcionesWordle.obtenerCategoriaSistemas()).toEqual(["HOLA", "PERO"]);
   });
 }) 
+
+describe("definirTamanioPalabraSecreta()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. Devuelve el tamaño de una palabra', () => {
+    expect(funcionesWordle.definirTamanioPalabraSecreta("PERRO")).toBe(5);
+  });
+}) 
