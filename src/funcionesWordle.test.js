@@ -57,6 +57,11 @@ describe('definirIntento(intento, tamPalabraSecreta)', () => {
     expect(funcionesWordle.definirIntento('HOLA', 4)).toBe('HOLA');
     expect(funcionesWordle.listaIntentos).toContain('HOLA');
   });
+  it('TC2. Debe devolver el intento si nroIntentos es igual a 6', () => {
+    funcionesWordle.nroIntentos = 6;
+    expect(funcionesWordle.definirIntento('COLA', 4)).toBe('COLA');
+    expect(funcionesWordle.listaIntentos).not.toContain('COLA');
+  });
 });
 
 describe("generarResultadoVacio(tamPalabraSecreta)", () => {
