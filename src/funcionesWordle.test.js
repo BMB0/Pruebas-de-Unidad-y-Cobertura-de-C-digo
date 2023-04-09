@@ -156,7 +156,6 @@ describe('definirPalabraSecreta(palabra)', () => {
 
 describe("limpiarListaIntentos()", () => {
   let funcionesWordle = new FuncionesWordle();
-  //console.log(funcionesWordle);
   it('TC1. Tiene que generar un array del mismo tamanio que el de la variable tamPalabraSecreta', () => {
     funcionesWordle.limpiarListaIntentos();
     expect(funcionesWordle.listaIntentos).toEqual(['X','X','X','X','X','X',]);
@@ -167,8 +166,14 @@ describe("limpiarListaIntentos()", () => {
 
 describe("obtenerListaPalabras()", () => {
   let funcionesWordle = new FuncionesWordle();
-  //console.log(funcionesWordle);
   it('TC1. Tiene que retornar la Lista de Palabras', () => {
     expect(funcionesWordle.obtenerListaPalabras()).toEqual(["HOJA","HOLA","LOBO","COLA","PALO","PICO","COCA","PERO","DUKE","RAYOS","MESSI","PALOS","LIBRO","LLAVE","BALON","CINCO",]);
+  });
+})
+
+describe("obtenerCategoriaDeporte()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. Tiene que retornar la Lista de Palabras de la categoria deporte', () => {
+    expect(funcionesWordle.obtenerCategoriaDeporte()).toEqual(["MESSI", "BALON", "DUKE", "CINCO"]);
   });
 })
