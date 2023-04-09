@@ -225,3 +225,10 @@ describe("definirTamanioPalabraSecreta()", () => {
     expect(funcionesWordle.definirTamanioPalabraSecreta("PERRO")).toBe(5);
   });
 }) 
+
+describe("definirHistorialIntentos()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. Tiene que retornar la Lista de intentos', () => {
+    expect(funcionesWordle.definirHistorialIntentos()).toEqual(["X", "X", "X", "X", "X", "X"]);
+  });
+}) 
