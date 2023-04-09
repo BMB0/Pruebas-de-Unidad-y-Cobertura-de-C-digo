@@ -67,6 +67,11 @@ describe('definirIntento(intento, tamPalabraSecreta)', () => {
     expect(funcionesWordle.definirIntento('HO', 4)).toEqual('Palabra Incompleta.');
     expect(funcionesWordle.listaIntentos).not.toContain('HO');
   });
+  it('TC4. Debe lanzar una excepción si el intento no está permitido', () => {
+    funcionesWordle.nroIntentos = 0;
+    expect(funcionesWordle.definirIntento('1234', 4)).toEqual('No existe esa palabra.');
+    expect(funcionesWordle.listaIntentos).not.toContain('1234');
+  });
 });
 
 describe("generarResultadoVacio(tamPalabraSecreta)", () => {
