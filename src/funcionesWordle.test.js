@@ -248,3 +248,20 @@ describe("definirlistaPistas()", () => {
     expect(funcionesWordle.definirListaPistas()).toEqual(["X", "X", "X", "X", "X", "X"]);
   });
 }) 
+
+describe("definirAzules()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. no tiene que realizar ningun cambio en las variables cadenaResultado ni en copiaPalabraSecreta', () => {
+    funcionesWordle.definirAzules("RAYOS", "MUNDO")
+    expect(funcionesWordle.cadenaResultado).toEqual(undefined);
+    expect(funcionesWordle.copiaPalabraSecreta).toEqual([""]);
+  });
+  it('TC2. Tiene que reconocer una sola letra', () => {
+    funcionesWordle.generarResultadoVacio(5);
+    funcionesWordle.palabraSecreta = "REZAR"
+    funcionesWordle.copiaPalabraSecreta = funcionesWordle.palabraSecreta.split("");
+    funcionesWordle.definirAzules("RAYOS", funcionesWordle.palabraSecreta)
+    expect(funcionesWordle.cadenaResultado).toEqual(["z", "o", "o", "o", "o"]);
+    expect(funcionesWordle.copiaPalabraSecreta).toEqual([".","E","Z","A","R"]);
+  });
+}) 
