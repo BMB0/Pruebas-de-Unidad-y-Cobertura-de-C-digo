@@ -232,3 +232,12 @@ describe("definirHistorialIntentos()", () => {
     expect(funcionesWordle.definirHistorialIntentos()).toEqual(["X", "X", "X", "X", "X", "X"]);
   });
 }) 
+
+
+describe("definirNroIntentos()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  funcionesWordle.limpiarListaIntentos();
+  it('TC1. Tiene que retornar la Lista de intentos', () => {
+    expect(funcionesWordle.definirNroIntentos()).toEqual(0);
+  });
+}) 
