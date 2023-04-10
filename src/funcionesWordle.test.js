@@ -241,3 +241,10 @@ describe("definirNroIntentos()", () => {
     expect(funcionesWordle.definirNroIntentos()).toEqual(0);
   });
 }) 
+
+describe("definirlistaPistas()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. Tiene que retornar la Lista de intentos', () => {
+    expect(funcionesWordle.definirListaPistas()).toEqual(["X", "X", "X", "X", "X", "X"]);
+  });
+}) 
