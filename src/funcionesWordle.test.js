@@ -130,6 +130,20 @@ describe('obtenerCadenaResultado()', () => {
   });
 });
 
+describe('obtenerPistaAlAzar(palabraSecreta)', () => {
+  let funcionesWordle;
+
+  beforeEach(() => {
+    funcionesWordle = new FuncionesWordle();
+    funcionesWordle.posicionPista = 2;
+  });
+
+  it('TC1. Debe devolver la pista correspondiente a la posición indicada', () => {
+    const resultado = funcionesWordle.obtenerPistaAlAzar('hola');
+    expect(resultado).toBe('l');
+  });
+});
+
 describe("definirNuevaPalabra(nuevaPalabra)", () => {
   let funcionesWordle = new FuncionesWordle();
   it('TC1. Tiene que aniadir la palabra a la lista y subir el tamanio de la lista de palabras', () => {
