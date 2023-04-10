@@ -110,9 +110,23 @@ describe('agregarPista()', () => {
     funcionesWordle.cadenaResultado = 'hola';
   });
 
-  it('TC1: Debe agregar la cadenaResultado a la listaPistas en la posición correspondiente', () => {
+  it('TC1. Debe agregar la cadenaResultado a la listaPistas en la posición correspondiente', () => {
     funcionesWordle.agregarPista();
     expect(funcionesWordle.listaPistas[2]).toBe('hola');
+  });
+});
+
+describe('obtenerCadenaResultado()', () => {
+  let funcionesWordle;
+
+  beforeEach(() => {
+    funcionesWordle = new FuncionesWordle();
+    funcionesWordle.cadenaResultado = 'hola';
+  });
+
+  it('TC1. Debe devolver la cadenaResultado', () => {
+    const resultado = funcionesWordle.obtenerCadenaResultado();
+    expect(resultado).toBe('hola');
   });
 });
 
