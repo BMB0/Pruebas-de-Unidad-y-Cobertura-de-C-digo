@@ -101,6 +101,21 @@ describe("concatenarResultado()", () => {
   });
 })
 
+describe('agregarPista()', () => {
+  let funcionesWordle;
+
+  beforeEach(() => {
+    funcionesWordle = new FuncionesWordle();
+    funcionesWordle.nroIntentos = 3;
+    funcionesWordle.cadenaResultado = 'hola';
+  });
+
+  it('TC1: Debe agregar la cadenaResultado a la listaPistas en la posición correspondiente', () => {
+    funcionesWordle.agregarPista();
+    expect(funcionesWordle.listaPistas[2]).toBe('hola');
+  });
+});
+
 describe("definirNuevaPalabra(nuevaPalabra)", () => {
   let funcionesWordle = new FuncionesWordle();
   it('TC1. Tiene que aniadir la palabra a la lista y subir el tamanio de la lista de palabras', () => {
