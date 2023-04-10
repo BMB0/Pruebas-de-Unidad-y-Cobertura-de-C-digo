@@ -87,6 +87,20 @@ describe("generarResultadoVacio(tamPalabraSecreta)", () => {
   });
 })
 
+describe("concatenarResultado()", () => {
+  let funcionesWordle;
+
+  beforeEach(() => {
+    funcionesWordle = new FuncionesWordle();
+  });
+
+  it('TC1. Debe unir los elementos del array cadenaResultado', () => {
+    funcionesWordle.cadenaResultado = ['h', 'o', 'l', 'a'];
+    funcionesWordle.concatenarResultado();
+    expect(funcionesWordle.cadenaResultado).toBe('hola');
+  });
+})
+
 describe("definirNuevaPalabra(nuevaPalabra)", () => {
   let funcionesWordle = new FuncionesWordle();
   it('TC1. Tiene que aniadir la palabra a la lista y subir el tamanio de la lista de palabras', () => {
