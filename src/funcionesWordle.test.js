@@ -315,10 +315,23 @@ describe("definirAzules()", () => {
   });
   it('TC2. Tiene que reconocer una sola letra', () => {
     funcionesWordle.generarResultadoVacio(5);
-    funcionesWordle.palabraSecreta = "REZAR"
+    funcionesWordle.palabraSecreta = "RAYOS"
     funcionesWordle.copiaPalabraSecreta = funcionesWordle.palabraSecreta.split("");
-    funcionesWordle.definirAzules("RAYOS", funcionesWordle.palabraSecreta)
+    funcionesWordle.definirAzules(funcionesWordle.palabraSecreta,"REZAR" )
     expect(funcionesWordle.cadenaResultado).toEqual(["z", "o", "o", "o", "o"]);
-    expect(funcionesWordle.copiaPalabraSecreta).toEqual([".","E","Z","A","R"]);
+    expect(funcionesWordle.copiaPalabraSecreta).toEqual([".","A","Y","O","S"]);
+  });
+}) 
+
+describe("definirAmarillas()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. Tiene que reconocer las amarillas en una palabra', () => {
+    funcionesWordle.generarResultadoVacio(5);
+    funcionesWordle.palabraSecreta = "RAYOS"
+    funcionesWordle.copiaPalabraSecreta = funcionesWordle.palabraSecreta.split("");
+    funcionesWordle.definirAmarillas(funcionesWordle.palabraSecreta, "POLAR")
+    console.log(funcionesWordle.cadenaResultado)
+    expect(funcionesWordle.cadenaResultado).toEqual(["o", "a", "o", "a", "a"]);
+    expect(funcionesWordle.copiaPalabraSecreta).toEqual([".",".","Y",".","S"]);
   });
 }) 
