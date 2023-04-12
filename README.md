@@ -1,5 +1,6 @@
 # UORDEL
 <img src="./imagenes/Team_Logo.png" alt="Team Logo" width="250" height="150" style="border-radius: 20%;">
+
 ## Descripción
 
 "Uordle" es un juego de palabras, su objetivo es adivinar una palabra secreta de letras variables en el menor número de intentos posible. El juego te da seis oportunidades para adivinar la palabra y te dará pistas cada vez que lo intentes.
