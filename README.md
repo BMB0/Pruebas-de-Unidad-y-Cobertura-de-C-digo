@@ -1,10 +1,9 @@
-![Team Logo](./imagenes/Team_Logo.png)
 # UORDEL
-
+<img src="./imagenes/Team_Logo.png" alt="Team Logo" width="250" height="150" style="border-radius: 20%;">
 ## Descripción
 
 "Uordle" es un juego de palabras, su objetivo es adivinar una palabra secreta de letras variables en el menor número de intentos posible. El juego te da seis oportunidades para adivinar la palabra y te dará pistas cada vez que lo intentes.
-
+Markdown Preview Enhanced
 ## Requerimientos
 
 - [Node.js](https://nodejs.org/en)
@@ -21,7 +20,7 @@ Ejecute el siguiente comando que puede usar en la terminal
 ```bash
 git clone https://github.com/BMB0/Pruebas-de-Unidad-y-Cobertura-de-C-digo && cd Pruebas-de-Unidad-y-Cobertura-de-C-digo && npm install --save-dev jest
 ```
-
+Este comando clonará el repositorio en en directorio actual e instalará jest en el proyecto.
 ## Uso
 
 #### Para instalar las dependencias
