@@ -5,7 +5,7 @@ describe("obtenerIntento()", () => {
     it('TC1. Tiene que retornar la variable intento', () => {
       expect(wordle.obtenerIntento()).toBe(undefined);
     });
-  })
+  });
 
   describe('obtenerCategoriaSistemas()', () => {
     let wordle;
@@ -30,7 +30,7 @@ describe("obtenerIntento()", () => {
       expect(resultadoObtenido).toEqual(resultadoEsperado);
     });
   });
-
+  
   describe('obtenerCategoriaDeporte()', () => {
     let wordle;
     beforeEach(() => {
@@ -50,16 +50,18 @@ describe("obtenerIntento()", () => {
     it('TC1. Tiene que retornar la Lista de intentos', () => {
       expect(wordle.obtenerResultadoJuego()).toEqual("Ganador");
     });
-  }) 
+  });
+
   describe("obtenerPalabrasSeleccionables()", () => {
     let wordle = new Wordle();
     it('TC1. Tiene que retornar la lista de palabras seleccionables', () => {
       expect(wordle.obtenerPalabrasSeleccionables()).toEqual(["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE", "RAYOS", "MESSI", "PALOS", "LIBRO", "LLAVE", "BALON", "CINCO"]);
     });
-  }) 
+  });
+
   describe("obtenerHistorialIntentos()", () => {
     let wordle = new Wordle();
     it('TC1. Tiene que retornar el historial de intentos', () => {
       expect(wordle.obtenerHistorialIntentos()).toEqual([]);
     });
-  }) 
+  });

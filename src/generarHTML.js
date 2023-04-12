@@ -48,7 +48,6 @@ function generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, list
 }
 
 function generarHtmlPalabraSecreta(tamPalabraSecreta, palabraSecreta){
-    //let codigoFormulario = "La palabra secreta es: ";
     let codigoFormulario = "";
     for(let i = 0; i < tamPalabraSecreta; i++){
         codigoFormulario = codigoFormulario + `<input type="text" class="palabra-secreta" size="1" maxlength="1" disabled value="${palabraSecreta[i]}">`;
