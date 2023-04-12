@@ -8,10 +8,25 @@ describe("obtenerIntento()", () => {
   })
 
   describe('obtenerCategoriaSistemas()', () => {
+    let wordle;
+    beforeEach(() => {
+      wordle = new Wordle();
+    });
     it('TC1. debería retornar la lista de palabras de la categoría Sistemas', () => {
-      const wordle = new Wordle();
-      const resultadoEsperado = ["HOLA", "PERO"];
-      const resultadoObtenido = wordle.obtenerCategoriaSistemas();
+      let resultadoEsperado = ["HOLA", "PERO"];
+      let resultadoObtenido = wordle.obtenerCategoriaSistemas();
+      expect(resultadoObtenido).toEqual(resultadoEsperado);
+    });
+  });
+
+  describe('obtenerCategoriaUCB()', () => {
+    let wordle;
+    beforeEach(() => {
+      wordle = new Wordle();
+    });
+    it('TC1. debería retornar la lista de palabras de la categoría UCB', () => {
+      let resultadoEsperado = ["LOBO", "LIBRO", "LLAVE"];
+      let resultadoObtenido = wordle.obtenerCategoriaUCB();
       expect(resultadoObtenido).toEqual(resultadoEsperado);
     });
   });
