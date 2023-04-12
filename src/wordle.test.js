@@ -42,3 +42,12 @@ describe("obtenerIntento()", () => {
       expect(resultadoObtenido).toEqual(resultadoEsperado);
     });
   });
+
+  describe("obtenerResultadoJuego()", () => {
+    let wordle = new Wordle();
+    wordle.definirSecreta("RAYOS");
+    wordle.definirIntento("RAYOS");
+    it('TC1. Tiene que retornar la Lista de intentos', () => {
+      expect(wordle.obtenerResultadoJuego()).toEqual("Ganador");
+    });
+  }) 

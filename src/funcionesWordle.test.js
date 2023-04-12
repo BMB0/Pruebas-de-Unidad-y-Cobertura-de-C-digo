@@ -335,3 +335,25 @@ describe("definirAmarillas()", () => {
     expect(funcionesWordle.copiaPalabraSecreta).toEqual([".",".","Y",".","S"]);
   });
 }) 
+/*
+describe('obtenerPista()', () => {
+  const randomNumberExpected = 0
+  let funcionesWordle;
+
+  beforeEach(() => {
+    funcionesWordle = new FuncionesWordle();
+    jest.spyOn(global.Math, 'random').mockReturnValue(randomNumberExpected)
+  })
+
+  afterEach(() => {
+    jest.spyOn(global.Math, 'random').mockRestore()
+  })
+
+  it('TC1. debería retornar una pista al azar', () => {
+    funcionesWordle.generarResultadoVacio(5);
+    funcionesWordle.definirPalabraSecreta
+    expect(funcionesWordle.obtenerPistaAlAzar()).toBe('MESSI');
+    expect(Math.random).toHaveBeenCalledTimes(1);
+  });
+});*/
+
