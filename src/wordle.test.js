@@ -30,3 +30,15 @@ describe("obtenerIntento()", () => {
       expect(resultadoObtenido).toEqual(resultadoEsperado);
     });
   });
+
+  describe('obtenerCategoriaDeporte()', () => {
+    let wordle;
+    beforeEach(() => {
+      wordle = new Wordle();
+    });
+    it('TC1. debería retornar la lista de palabras de la categoría Deporte', () => {
+      let resultadoEsperado = ["MESSI", "BALON", "DUKE", "CINCO"];
+      let resultadoObtenido = wordle.obtenerCategoriaDeporte();
+      expect(resultadoObtenido).toEqual(resultadoEsperado);
+    });
+  });
