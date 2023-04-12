@@ -57,3 +57,9 @@ describe("obtenerIntento()", () => {
       expect(wordle.obtenerPalabrasSeleccionables()).toEqual(["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE", "RAYOS", "MESSI", "PALOS", "LIBRO", "LLAVE", "BALON", "CINCO"]);
     });
   }) 
+  describe("obtenerHistorialIntentos()", () => {
+    let wordle = new Wordle();
+    it('TC1. Tiene que retornar el historial de intentos', () => {
+      expect(wordle.obtenerHistorialIntentos()).toEqual([]);
+    });
+  }) 
