@@ -357,3 +357,9 @@ describe('obtenerPista()', () => {
   });
 });*/
 
+describe("obtenerCadenaResultado()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. Tiene que retornar la cadena resultado', () => {
+    expect(funcionesWordle.obtenerCadenaResultado()).toEqual(undefined);
+  });
+}) 
