@@ -51,3 +51,9 @@ describe("obtenerIntento()", () => {
       expect(wordle.obtenerResultadoJuego()).toEqual("Ganador");
     });
   }) 
+  describe("obtenerPalabrasSeleccionables()", () => {
+    let wordle = new Wordle();
+    it('TC1. Tiene que retornar la lista de palabras seleccionables', () => {
+      expect(wordle.obtenerPalabrasSeleccionables()).toEqual(["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE", "RAYOS", "MESSI", "PALOS", "LIBRO", "LLAVE", "BALON", "CINCO"]);
+    });
+  }) 
