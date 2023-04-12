@@ -13,5 +13,11 @@ describe("generarHtmlIngresarIntento(tamPalabraSecreta)", () => {
         expect(resultado.match(/<input/g)).toHaveLength(tamPalabraSecreta+1);
         expect(resultado.match(/type="submit"/)).toHaveLength(1);
     });
+    it('TC3. deberia retornar 5 inputs text y un input submit cuando se ingresa un número igual a 5 para el tamaño de la palabra secreta', () => {
+        const tamPalabraSecreta = 5;
+        const resultado = generarHtmlIngresarIntento(tamPalabraSecreta);
+        expect(resultado.match(/<input/g)).toHaveLength(tamPalabraSecreta+1);
+        expect(resultado.match(/type="submit"/)).toHaveLength(1);
+    });
 });
   
