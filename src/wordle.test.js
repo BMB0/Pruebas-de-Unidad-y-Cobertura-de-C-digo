@@ -74,3 +74,21 @@ describe("obtenerIntento()", () => {
       expect(wordle.nuevaPalabra).toEqual("REZAR");
     });
   }) 
+
+  describe("definirPalabraSecreta()", () => {
+    let wordle 
+    const randomNumberExpected = 0
+
+    beforeEach(() => {
+      wordle = new Wordle();
+      jest.spyOn(global.Math, 'random').mockReturnValue(randomNumberExpected)
+    })
+
+    afterEach(() => {
+      jest.spyOn(global.Math, 'random').mockRestore()
+    })
+    it('TC1. define una palabra secreta', () => {
+      wordle.definirPalabraSecreta()
+      expect(wordle.palabraSecreta).toEqual("HOJA");
+    });
+  }) 
