@@ -1,3 +1,4 @@
+import WordleError from "./ExcepcionesWordle";
 import Wordle from "./wordle";
 
 describe("obtenerIntento()", () => {
@@ -65,3 +66,11 @@ describe("obtenerIntento()", () => {
       expect(wordle.obtenerHistorialIntentos()).toEqual([]);
     });
   });
+
+  describe("definirNuevaPalabra()", () => {
+    let wordle = new Wordle();
+    it('TC1. Guarda una nueva palabra en nuevaPalabra', () => {
+      wordle.definirNuevaPalabra("REZAR")
+      expect(wordle.nuevaPalabra).toEqual("REZAR");
+    });
+  }) 
