@@ -363,3 +363,14 @@ describe("obtenerCadenaResultado()", () => {
     expect(funcionesWordle.obtenerCadenaResultado()).toEqual(undefined);
   });
 }) 
+/*
+describe("definirCadenaResultado()", () => {
+  let funcionesWordle = new FuncionesWordle();
+  it('TC1. agrega una nueva pista cuando listaPistas está disponible', () => {
+    funcionesWordle.generarResultadoVacio(5);
+    funcionesWordle.palabraSecreta = "REZAR";
+    funcionesWordle.definirIntento("RAYOS");
+    funcionesWordle.definirCadenaResultado("RAYOS", "REZAR");
+    expect(funcionesWordle.listaPistas).toEqual(undefined);
+  });
+}) */
