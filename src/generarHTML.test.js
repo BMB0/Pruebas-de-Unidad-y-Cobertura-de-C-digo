@@ -44,4 +44,12 @@ describe("generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, lis
         expect(resultado.match(/18, 156, 235/g)).toHaveLength(1);
         expect(resultado.match(/255, 255, 255/g)).toHaveLength(5);
     });
+    it('TC4. deberia retornar una cadena que contenga 1 (248, 170, 81) y 5 (255, 255, 255) si existe un intento y una pista que se encuentre en la palabra(a)', () => {
+        let historialIntentos = ["A", "X", "X", "X", "X", "X"];
+        let listaPistas = ["a", "X", "X", "X", "X", "X"];
+        let tamPalabraSecreta = 1
+        const resultado = generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, listaPistas);
+        expect(resultado.match(/248, 170, 81/g)).toHaveLength(1);
+        expect(resultado.match(/255, 255, 255/g)).toHaveLength(5);
+    });
 });
