@@ -29,4 +29,11 @@ describe("generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, lis
         const resultado = generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, listaPistas);
         expect(resultado.match(/<br>/g)).toHaveLength(6);
     });
+    it('TC2. deberia retornar una cadena que contenga 6 (255, 255, 255) si no existen intentos', () => {
+        let historialIntentos = ["X", "X", "X", "X", "X", "X"];
+        let listaPistas = ["X", "X", "X", "X", "X", "X"];
+        let tamPalabraSecreta = 1
+        const resultado = generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, listaPistas);
+        expect(resultado.match(/255, 255, 255/g)).toHaveLength(6);
+    });
 });
