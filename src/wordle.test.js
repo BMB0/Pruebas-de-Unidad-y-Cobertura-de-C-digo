@@ -75,6 +75,26 @@ describe("obtenerIntento()", () => {
     });
   }) 
 
+  describe("obtenerPista()", () => {
+    let wordle 
+    const randomNumberExpected = 0
+
+    beforeEach(() => {
+      wordle = new Wordle();
+      jest.spyOn(global.Math, 'random').mockReturnValue(randomNumberExpected)
+    })
+
+    afterEach(() => {
+      jest.spyOn(global.Math, 'random').mockRestore()
+    })
+    it('TC1. Guarda una nueva palabra en nuevaPalabra', () => {
+      wordle.palabraSecreta = "RAYOS";
+      wordle.tamPalabraSecreta = 5;
+      wordle.funcionesWordle.obtenerPistaAlAzar("RAYOS");
+      expect(wordle.obtenerPista()).toEqual("R");
+    });
+  }) 
+
   describe("definirPalabraSecreta()", () => {
     let wordle 
     const randomNumberExpected = 0
