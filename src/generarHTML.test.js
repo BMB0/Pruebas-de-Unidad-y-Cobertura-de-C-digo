@@ -20,4 +20,13 @@ describe("generarHtmlIngresarIntento(tamPalabraSecreta)", () => {
         expect(resultado.match(/type="submit"/)).toHaveLength(1);
     });
 });
-  
+
+describe("generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, listaPistas)", () => {
+    it('TC1. deberia retornar una cadena que contenga 6 <br> si el tamaño de la palabra secreta es 0', () => {
+        let historialIntentos = ["X", "X", "X", "X", "X", "X"];
+        let listaPistas = ["X", "X", "X", "X", "X", "X"];
+        let tamPalabraSecreta = 0
+        const resultado = generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, listaPistas);
+        expect(resultado.match(/<br>/g)).toHaveLength(6);
+    });
+});
